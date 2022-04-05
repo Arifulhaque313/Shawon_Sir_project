@@ -1,0 +1,23 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+.body {
+    font-family: "Poppins", sans-serif;
+}
+
+.ctr {
+    border: 1px solid rgb(196, 195, 195);
+    width: 85%;
+
+    margin: 65px auto 0px auto;
+}
+
+/* form traning time field  */
+.hidden {
+    display: none;
+}
+
+.show {
+    display: block;
+}
