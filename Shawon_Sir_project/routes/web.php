@@ -21,5 +21,27 @@ Route::get('/getDistrict',[UserController::class,'getDistrict'])->name('getDistr
 Route::get('/getUpazila',[UserController::class,'getUpazila'])->name('getUpazila');
 Route::get('/getUnion',[UserController::class,'getUnion'])->name('getUnion');
 Route::post('/traineeStore',[UserController::class,'traineeStore'])->name('trainee.store');
+Route::get('/countfilter',[UserController::class,'countfilter'])->name('count.filter');
+Route::post('/userscount',[UserController::class,'userscount'])->name('users.count');
+
+Route::get('/dashboard',[UserController::class,'view']);
+// Route::get('/dashboard',function(){
+//     return view('dashboard.index');
+// });
+
+
+
+
+
+
+
+
+
+
+
+
+Route::get('/districtView/{domain_id,domain_type_id}',[UserController::class,'districtview'])->name('district.view');
+
+
 
 

@@ -24,7 +24,7 @@ return new class extends Migration
             $table->string('traning_time');
             $table->string('division_id');
             $table->string('district_id');
-            $table->string('upazila_id');
+            $table->string('upazila_id')->nullable();
             $table->timestamp('email_verified_at')->nullable();
             $table->rememberToken();
             $table->timestamps();

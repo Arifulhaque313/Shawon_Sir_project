@@ -38,7 +38,7 @@
                
             </select>
         @error('division')
-             <div class="text-danger">{{ $message }}</div>
+             <div class="alert alert-danger">{{ $message }}</div>
         @enderror
         </div>
         <div class="col-12 col-md-6 col-lg-6  district" style="display:none;">
@@ -47,7 +47,7 @@
                 <!-- <option value="">1</option> -->
             </select>
              @error('district')
-             <div class="text-danger">{{ $message }}</div>
+             <div class="alert alert-danger">{{ $message }}</div>
             @enderror
         </div>
     </div>
@@ -80,9 +80,9 @@
 
         <div class="col-12 col-md-3 lg-md-3">
         <label for="" class=""><span><b>নাম:</b></span> ‍<b class="text-danger fs-5">*</b></label>
-        <input type="text" name = "name" class="form-control @error('name') is-invalid @enderror" value="{{ old('name') }}" placeholder = "আপনার নাম লিখুন" >
+        <input type="text" name = "name" class="form-control @error('email') is-invalid @enderror" value="{{ old('name') }}" placeholder = "আপনার নাম লিখুন" >
         @error('name')
-             <div class="text-danger">{{ $message }}</div>
+             <div class="alert alert-danger">{{ $message }}</div>
         @enderror
         </div>
 
@@ -90,7 +90,7 @@
         <label for="" class=""><span><b>পদবি:</b></span> ‍<b class="text-danger fs-5">*</b></label>
         <input type="text" name="designation" class="form-control @error('designation') is-invalid @enderror" placeholder ="সহকারি প্রোগ্রামার" value="{{ old('designation') }}" >
         @error('designation')
-             <div class="text-danger">{{ $message }}</div>
+             <div class="alert alert-danger">{{ $message }}</div>
          @enderror
         </div>
 
@@ -103,7 +103,7 @@
             
         </select>
         @error('gender')
-             <div class="text-danger">{{ $message }}</div>
+             <div class="alert alert-danger">{{ $message }}</div>
          @enderror
 
         </div>
@@ -112,7 +112,7 @@
         <label for="" class=""><span><b>মোবাইল নম্বর:</b></span> ‍<b class="text-danger fs-5">*</b></label>
         <input type="text" name="mobile" class="form-control @error('mobile') is-invalid @enderror" placeholder="017********">
          @error('mobile')
-             <div class="text-danger">{{ $message }}</div>
+             <div class="alert alert-danger">{{ $message }}</div>
          @enderror
         </div>
 
@@ -120,7 +120,7 @@
         <label for="" class=""><span><b>ইমেইল:</b></span> ‍<b class="text-danger fs-5">*</b></label>
         <input type="email" name="email" class="form-control @error('email') is-invalid @enderror" placeholder = "rohim111@gmail.com" >
         @error('email')
-             <div class="text-danger">{{ $message }}</div>
+             <div class="alert alert-danger">{{ $message }}</div>
         @enderror
         </div>
         
@@ -135,24 +135,18 @@
             <div class="col-12 col-md-3 col-lg-3">
 
                <label for="" class=""><span><b>আপনি কি পূর্বে প্রশিক্ষণটি নিয়েছেন:</b></span> ‍<b class="text-danger fs-5">*</b></label>
-               <select name="training" id="training" class="form-select @error('training') is-invalid @enderror" >
+               <select name="training" id="training" class="form-select" >
                    <option selected disabled value="">--Select--</option>
                    <option value="yes">Yes</option>
                    <option value="no">No</option>
                </select>
 
-             @error('training')
-             <div class="text-danger">{{ $message }}</div>
-             @enderror
-
             </div>
             <div class="col-12 col-md-2 col-lg-2 hidden" id="time">
 
                <label for="" class=""><span><b>কত বার:</b></span> ‍<b class="text-danger fs-5">*</b></label>
-               <input type="text" name = "training_time" class="form-control @error('training_time') is-invalid @enderror" >
-            @error('training_time')
-             <div class="text-danger">{{ $message }}</div>
-             @enderror
+               <input type="text" name = "training_time" class="form-control" >
+
             </div>
         </div>
 
@@ -161,7 +155,7 @@
 
 
 <div class="mt-4 mb-3 text-center">
-    <button class="btn btn-primary" type="submit" >Submit</button>
+    <button class="btn btn-primary" type="submit" name="submit">Submit</button>
 </div>
 
 </form>
@@ -187,7 +181,7 @@
                
                 $("#union").empty();
                 
-                 $("#district").append('<option value="">জেলা / বিভাগীয় পর্যায়ের অফিস</option>');
+                // $("#district").append('<option>জেলা / বিভাগীয় পর্যায়ের অফিস</option>');
                 $.each(res,function(key,value){
                 $("#district").append('<option value="'+value+'">'+key+'</option>');
                 });
@@ -215,7 +209,7 @@
             if(res){
                 $("#upazila").empty();
                 $("#union").empty();
-         $("#upazila").append('<option value="">উপজেলা / জেলা পর্যায়ের অফিস: ‍</option>');
+        // $("#upazila").append('<option>উপজেলা / জেলা পর্যায়ের অফিস: ‍</option>');
                 $.each(res,function(key,value){
                 $("#upazila").append('<option value="'+value+'">'+key+'</option>');
                 });
@@ -241,7 +235,7 @@
             success:function(res){        
             if(res){
                 $("#union").empty();
-        $("#union").append('<option value="">উপজেলা পর্যায়ের অফিস:</option>');
+        $("#union").append('<option>উপজেলা পর্যায়ের অফিস:</option>');
                 $.each(res,function(key,value){
                 $("#union").append('<option value="'+value+'">'+key+'</option>');
                 });
@@ -271,6 +265,7 @@
         $('#time').removeClass("show");
         }
         console.log(responseID);
+
         });
 
 </script>
