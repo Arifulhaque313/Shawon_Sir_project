@@ -7,9 +7,19 @@
 
 <div class="container col-8 offset-2 mt-5">
    
-    <button type="button" class="btn btn-primary mb-3">
+    
+    <div class="d-flex justify-content-between">
+        <div>
+            <button type="button" class="btn btn-primary mb-3">
              Total Trainee <span class="badge badge-light">{{$query_count}}</span>
     </button>
+        </div>
+
+        <div>
+            <a href="{{ url()->previous() }}" style="text-decoration:none;">Back to Dashboard</a>
+        </div>
+    </div>
+    
     <div class="card">
         <div class="card-body">
             <table class="table table-striped">

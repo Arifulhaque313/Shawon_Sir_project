@@ -143,8 +143,12 @@ class UserController extends Controller
         $mymonshingh_count = User::where('division_id','90438')->count();
         $khulna_count = User::where('division_id','60065')->count();
 
+        $division_id = DB::table('central_npf_domains')->where('domain_type_id',4)->get();
+    // dd($division_id);
+    
+
       
-       return view('dashboard.index',compact('total_trainee_count','trainee','rangpur_count','shylet_count','barisal_count','dhaka_count','chittagong_count','rajshahi_count','mymonshingh_count','khulna_count'));
+       return view('dashboard.index',compact('division_id','total_trainee_count','trainee','rangpur_count','shylet_count','barisal_count','dhaka_count','chittagong_count','rajshahi_count','mymonshingh_count','khulna_count'));
 
     }
 
